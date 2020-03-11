@@ -10,7 +10,7 @@ or
 yarn add @spacepatate/react-space-datetime-picker
 ```
 
-### Date picker
+### Date picker example use case
 
 ```
 <SpaceDatetimePicker
@@ -24,11 +24,13 @@ yarn add @spacepatate/react-space-datetime-picker
     showTime={true}></SpaceDatetimePicker>
 ```
 
-#### With time
+![minimal](https://raw.githubusercontent.com/spacepatate/react-space-datetime-picker/master/screenshot1.png)
 
 ```
-<SpaceDatetimePicker value={value} format={DD/MM/YYYY HH:mm:ss} showTime={true}></SpaceDateTimePicker>
+//without any props values
+<SpaceDatetimePicker></SpaceDatetimePicker>
 ```
+![minimal](https://raw.githubusercontent.com/spacepatate/react-space-datetime-picker/master/screenshot2.png)
 
 ### SpaceDatetimePicker Parameters
 

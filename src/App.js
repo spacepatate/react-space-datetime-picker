@@ -7,15 +7,7 @@ function App() {
   return (
     <div className="App">
 
-      <SpaceDatetimePicker
-        onChange={e => { console.log('onchange = ', e); }}
-        hour12={true}
-        locale={'en-US'}
-        weekday={'short'}
-        month={'long'}
-        placeholder={'toto'}
-        format={'DD/MM/YYYY HH:mm:ss'}
-        showTime={true}></SpaceDatetimePicker>
+      <SpaceDatetimePicker></SpaceDatetimePicker>
     </div>
   );
 }
