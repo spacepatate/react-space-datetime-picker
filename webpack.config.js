@@ -1,23 +1,39 @@
-var path = require("path");
+// webpack.config.js
+var path = require('path');
+var ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 module.exports = {
-  mode: "production",
-  entry: "./src/SpaceDatetimePicker.js",
+  entry: './src/components/index.js',
   output: {
-    path: path.resolve("build"),
-    filename: "index.js",
-    libraryTarget: "commonjs2"
+    path: path.resolve(__dirname, 'build'),
+    filename: 'index.js',
+    libraryTarget: 'commonjs2'
   },
   module: {
     rules: [
-      { test: /\.js$/, exclude: /node_modules/, loader: "babel-loader" },
       {
-        test: /\.css$/,
-        loader: "style-loader!css-loader"
-      }
+        test: /\.js$/,
+        include: path.resolve(__dirname, 'src/components'),
+        exclude: /(node_modules|bower_components|build)/,
+        use: {
+          loader: 'babel-loader',
+          options: {
+            presets: ['env', { modules: false }]
+          }
+        }
+      }, {
+        test: /\.*css$/,
+        use : ExtractTextPlugin.extract({
+            fallback : 'style-loader',
+            use : [
+                'css-loader',
+                'sass-loader'
+            ]
+        })
+       },
     ]
   },
   externals: {
-    react: "react"
+    'react': 'commonjs react' 
   }
 };

@@ -1,7 +1,7 @@
 import React from 'react';
 import './App.css';
-import './SpaceDatetimePicker.css';
-import SpaceDatetimePicker from './SpaceDatetimePicker';
+import './dist/SpaceDatetimePicker.css';
+import { SpaceDatetimePicker } from './dist';
 
 function App() {
   return (
